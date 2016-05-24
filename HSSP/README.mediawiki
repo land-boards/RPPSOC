@@ -54,6 +54,8 @@
 ** On a stock Raspberry Pi B+, the GPIO pins can be toggled 3 times at 2.4 MHz (clock low, data transition, clock High).
 ** [http://land-boards.com/blwiki/index.php?title=Porting_HSSP_to_the_RPPSOC#Clock_Cycle_Timing Captured Waveform].
 
+http://land-boards.com/blwiki/index.php?title=Porting_HSSP_to_the_RPPSOC#Clock_Cycle_Timing
+
 == Ownership ==
 
 * Some of these files (particularly libraries) were created by others.
