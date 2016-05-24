@@ -1,6 +1,25 @@
 = Land Boards Host Sourced Serial Programming (RPPSOC) =
 
-* These are the HSSP Host Sourced Serial Programming files for the RPPSOC
+* These are the HSSP Host Sourced Serial Programming files for the RPPSOC.
+* The HSSP code is based on [http://www.cypress.com/documentation/application-notes/an73054-psoc-3-and-psoc-5lp-programming-using-externalApplication Note AN73054] from Cypress Semiconductor.
+
+== HSSP Porting Details ==
+
+* Land Boards has heavily modified the HSSP code to work with a Raspberry Pi as the Host.
+* These changes make a simple comparison of the two source codes difficult.
+* Some of the changes that we made are for style.
+* Most of the changes that we made were required for function.
+* The HSSP code was originally written to run on a PSOC as a Host processor to another PSOC.
+* The Raspberry Pi does not have the same limits as a PSOC.
+** Executable size is not limited as it is for a PSOC.
+
+== Dependencies ==
+
+* The main external dependency is [http://wiringpi.com/ WiringPi].
+** WiringPi is a GPIO library for the Raspberry Pi.
+** WiringPi allows for extremely GPIO fast access - much faster than Python provides.
+* Other dependencies, like the gcc compiler are standard with Debian.
+** Other OS's may require changes.
 
 == Ownership ==
 
