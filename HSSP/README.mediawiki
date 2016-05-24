@@ -42,19 +42,18 @@
 * Run make to compile and link the files together.
 * Run the executable to program the PSOC.
 
-=== TImeoutCalc ===
+=== TimeoutCalc ===
 
 * This code was used in development to determine the timing characteristics of the Raspberry Pi.
 * This code is not necessary to run the programmer but if there's a Pi out there with significantly different timing it might be useful to run the code to collect metrics on that part.
 
 === WiringIO ===
 
-* This is a bit-banging speed test. 
-* WiringIO is amazingly fast.
+* WiringIO is a C language library for the Raspberry Pi that performs bit banging and has an API similar to the Arduino supporting digital read/write, timing, etc.
+* The code here is is a bit-banging speed test. 
+* WiringIO is amazingly fast at bit-banging.
 ** On a stock Raspberry Pi B+, the GPIO pins can be toggled 3 times at 2.4 MHz (clock low, data transition, clock High).
 ** [http://land-boards.com/blwiki/index.php?title=Porting_HSSP_to_the_RPPSOC#Clock_Cycle_Timing Captured Waveform].
-
-http://land-boards.com/blwiki/index.php?title=Porting_HSSP_to_the_RPPSOC#Clock_Cycle_Timing
 
 == Ownership ==
 
