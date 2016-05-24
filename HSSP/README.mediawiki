@@ -12,6 +12,9 @@
 * The HSSP code was originally written to run on a PSOC as a Host processor to another PSOC.
 * The Raspberry Pi does not have the same limits as a PSOC.
 ** Executable size is not limited as it is for a PSOC.
+* Other changes involved replacement of timing loops which require for-next loops.
+** Where possible we replaced for-next loops with calls to the microsecond counter in the Pi.
+** In other instances we calculated the timing loop via running a simulation loop for 1000 cycles and determining the time that it took to run the loop.
 
 == Dependencies ==
 
@@ -20,6 +23,36 @@
 ** WiringPi allows for extremely GPIO fast access - much faster than Python provides.
 * Other dependencies, like the gcc compiler are standard with Debian.
 ** Other OS's may require changes.
+
+== Folders in this directory ==
+
+* HSSP_Programmer
+* TimeoutCalc
+* WiringIO
+
+=== HSSP_Programmer ===
+
+* This is the HSSP Programmer code.
+* The code is written in C.
+* The code can be compiled with a standard gcc compiler and linker.
+* The PSOC code is created on the host by this process
+# Create the part in PSoC Creator 3.3 (or later)- .hex file is the output
+# Convert the hex file to HexFile.c and HexFile.h
+# Download the HexFile.c and HexFile.h files to the Raspberry Pi
+* Run make to compile and link the files together.
+* Run the executable to program the PSOC.
+
+=== TImeoutCalc ===
+
+* This code was used in development to determine the timing characteristics of the Raspberry Pi.
+* This code is not necessary to run the programmer but if there's a Pi out there with significantly different timing it might be useful to run the code to collect metrics on that part.
+
+=== WiringIO ===
+
+* This is a bit-banging speed test. 
+* WiringIO is amazingly fast.
+** On a stock Raspberry Pi B+, the GPIO pins can be toggled 3 times at 2.4 MHz (clock low, data transition, clock High).
+** [http://land-boards.com/blwiki/index.php?title=Porting_HSSP_to_the_RPPSOC#Clock_Cycle_Timing Captured Waveform].
 
 == Ownership ==
 
