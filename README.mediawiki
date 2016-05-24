@@ -1,15 +1,31 @@
-== Land Boards System on a Chip Hat for the Raspberry Pi Card ==
+= Land Boards System on a Chip Hat for the Raspberry Pi Card =
 
-* These are the [http://land-boards.com/blwiki/index.php?title=Main_Page#RPPSOC Land Boards Cards] System on a Chip Hat for the Raspberry Pi code files.
+* These are the [http://land-boards.com/blwiki/index.php?title=Main_Page#RPPSOC RPPSOC Card] System on a Chip Hat for the Raspberry Pi code files.
+* Three folders are included
+** HSSP Host Sourced Serial Programming
+** TestCodePi
+** eeprom
 
-=== Ownership ===
+== HSSP - Host Sourced Serial Programming ==
+
+* This code allows the Raspberry Pi to program the PSOC on the RPPSOC hat
+
+== TestCodePi ==
+
+* Code that goes along with the [http://land-boards.com/blwiki/index.php?title=RPPSOC_Example_Projects RPPSOC Example Projects]
+
+== eeprom ==
+
+* Code for programming the EEPROM on the RPPSOC Hat
+
+== Ownership ==
 
 * Some of these files (particularly libraries) were created by others.
 ** There may be newer versions of these libraries "out there".
 ** Some libraries even have the same names but don't work the same.
 * Many of these files were created by me based on the work of others.
 
-=== Warning ===
+== Warning ==
 
 * Use at your own risk.
 ** If you brick your part or it melt to a puddle, it's on you not me.
