@@ -69,12 +69,13 @@ static unsigned char IsSpcIdle()
     /* Loop till SPC is not idle and timeout has not happened */
     do
     {
-		trigger();
         /* APACC DATA Read */
         Swd_RawReadPacket();
         if(Swd_packetAck != SWD_OK_ACK)
+		{
+			trigger();
             return(FAILURE);
-            
+		}
         loop++;
     }
 	while((Swd_packetData[2] != SPC_STATUS_IDLE) && (loop < SPC_POLLING_TIMEOUT));
