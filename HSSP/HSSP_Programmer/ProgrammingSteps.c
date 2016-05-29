@@ -73,7 +73,7 @@ static unsigned char IsSpcIdle()
         Swd_RawReadPacket();
         if(Swd_packetAck != SWD_OK_ACK)
 		{
-			trigger();
+//			trigger();
             return(FAILURE);
 		}
         loop++;
