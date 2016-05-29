@@ -589,7 +589,6 @@ unsigned char EraseFlash()
     Swd_WritePacket();
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);  
-	trigger();
         
     /* APACC DATA Write [0x0000 00DC] */
     Swd_packetData[0] = 0xDC;
@@ -603,6 +602,7 @@ unsigned char EraseFlash()
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);
     
+	trigger();
     if(IsSpcIdle() == SUCCESS)
         return(SUCCESS);
     else
