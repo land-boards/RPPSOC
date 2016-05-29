@@ -49,6 +49,7 @@ static unsigned char IsSpcIdle()
 {
     unsigned short loop = 0;
     
+	trigger();
     /* APACC ADDR Write [0x4000 4722] */
     Swd_packetHeader =  APACC_ADDR_WRITE;
     Swd_packetData[3] = 0x40;
@@ -602,7 +603,7 @@ unsigned char EraseFlash()
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);
     
-	trigger();
+//	trigger();
     if(IsSpcIdle() == SUCCESS)
         return(SUCCESS);
     else
