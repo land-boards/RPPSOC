@@ -63,13 +63,13 @@ static unsigned char IsSpcIdle()
     
     /* APACC DATA Read. This is Dummy read as this is first read packet */
     Swd_RawReadPacket();
-	trigger();
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);    
     
     /* Loop till SPC is not idle and timeout has not happened */
     do
     {
+		trigger();
         /* APACC DATA Read */
         Swd_RawReadPacket();
         if(Swd_packetAck != SWD_OK_ACK)
