@@ -576,7 +576,6 @@ unsigned char EraseFlash()
     Swd_WritePacket();
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);
-	trigger();
         
     /* The MSB three bytes in the following data transfers are always zero. Only the LSB byte will change 
        for each SWD packet. Also, all the below SWD packets have the same header APACC_DATA_WRITE */        
@@ -590,6 +589,7 @@ unsigned char EraseFlash()
     Swd_WritePacket();
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);  
+	trigger();
         
     /* APACC DATA Write [0x0000 00DC] */
     Swd_packetData[0] = 0xDC;
