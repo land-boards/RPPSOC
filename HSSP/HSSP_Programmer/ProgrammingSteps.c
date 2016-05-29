@@ -49,7 +49,6 @@ static unsigned char IsSpcIdle()
 {
     unsigned short loop = 0;
     
-	trigger();
     /* APACC ADDR Write [0x4000 4722] */
     Swd_packetHeader =  APACC_ADDR_WRITE;
     Swd_packetData[3] = 0x40;
@@ -64,6 +63,7 @@ static unsigned char IsSpcIdle()
     
     /* APACC DATA Read. This is Dummy read as this is first read packet */
     Swd_RawReadPacket();
+	trigger();
     if(Swd_packetAck != SWD_OK_ACK)
         return(FAILURE);    
     
