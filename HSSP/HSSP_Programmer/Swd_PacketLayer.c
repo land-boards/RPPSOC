@@ -593,7 +593,6 @@ void Swd_WritePacket()
     do
     {
         Swd_SendByte(Swd_packetHeader); /* 8-bit Header data */
-		trigger();
         
         Swd_FirstTurnAroundPhase();   /* First Turnaround phase */
         
