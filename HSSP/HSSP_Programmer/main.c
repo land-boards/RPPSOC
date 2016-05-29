@@ -114,7 +114,7 @@ int main()
 	printf("Land Boards, LLC - Programming PSoC\n");
 	piHiPri(255);
 	pullUpDnControl (3, PUD_OFF);
-	setupTrig();
+//	setupTrig();
 	/* Start the HSSP Programming and store the status */
 	programResult = ProgramDevice();
 	
