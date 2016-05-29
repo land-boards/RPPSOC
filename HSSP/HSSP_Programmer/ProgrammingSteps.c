@@ -567,6 +567,7 @@ unsigned char VerifyDeviceId()
 *******************************************************************************/
 unsigned char EraseFlash()
 {
+	trigger();
     /* APACC ADDR Write [0x4000 4720] */
     Swd_packetHeader =  APACC_ADDR_WRITE;
     Swd_packetData[3] = 0x40;

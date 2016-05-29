@@ -124,7 +124,6 @@ int main()
 	}
 	else /* HSSP Failure */
 	{ 
-		trigger();
 		ExitProgrammingMode();
 		/* Display the step number where the HSSP failed */
 		printf("HSSP Failed Step %d - ",currentStep);
