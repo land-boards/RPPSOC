@@ -114,3 +114,5 @@ while 1:
 	else:
 		print 'Daisy test failed'
 		break;
+	if daisyTestCount > 1000:
+		return
