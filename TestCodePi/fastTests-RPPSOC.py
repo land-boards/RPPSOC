@@ -58,91 +58,59 @@ IO27 = 27
 #IO23 = 23
 #IO24 = 24
 
-def blinkLED(channel):
-	'''Function to blink an LED attached to an output channel
-	Drives line high for a short time and then drives it low.
-	The high level output turns on the LED.
-	'''
-	GPIO.output(channel, 1)
-	time.sleep(0.5)
-	GPIO.output(channel, 0)
-	
-def testPair(ch1,ch2):
+def testPair(ch2,ch1):
 	'''Function to test I/O Pair.
 	Sets one pin to be an output and the other pin to be an input. 
 	Set the output high and check the input matches.
 	Set the output low and check the output matches.
-	Then switch the input/output channels and repeat.
 	'''
-	GPIO.setup(ch1, GPIO.OUT)
-	GPIO.setup(ch2, GPIO.IN)
-	GPIO.output(ch1, 1)
-	time.sleep(0.01)
-	if GPIO.input(ch2) != 1:
-		print 'Error reading high on channels', ch1, ch2
-		return False
-	GPIO.output(ch1, 0)
-	time.sleep(0.01)
-	if GPIO.input(ch2) != 0:
-		print 'Error reading low on channels', ch1, ch2
-		return False
-	GPIO.setup(ch1, GPIO.IN)
 	# 
-	GPIO.setup(ch2, GPIO.OUT)
 	GPIO.setup(ch1, GPIO.IN)
+	GPIO.setup(ch2, GPIO.OUT)
 	GPIO.output(ch2, 1)
 	time.sleep(0.01)
 	if GPIO.input(ch1) != 1:
 		print 'Error reading high on channels', ch1, ch2
+		GPIO.setup(ch2, GPIO.IN)
 		return False
 	GPIO.output(ch2, 0)
 	time.sleep(0.01)
 	if GPIO.input(ch1) != 0:
 		print 'Error reading low on channels', ch1, ch2
+		GPIO.setup(ch2, GPIO.IN)
 		return False
 	GPIO.setup(ch2, GPIO.IN)
 	return True
 	
 def daisyTests():
-	if testPair(I2C_3,I2C_4) == False:
-		print 'Test failed'
+	if testPair(17,6) == False:
+		print '17-6 Test failed'
 		return False
-	if testPair(UART_3,UART_4) == False:
-		print 'Test failed'
+	if testPair(18,12) == False:
+		print '18-12 Test failed'
 		return False
-	if testPair(SPI0_3,SPI0_4) == False:
-		print 'Test failed'
+	if testPair(27,13) == False:
+		print '27-13 Test failed'
 		return False
-	if testPair(SPI0_5,SPI0_6) == False:
-		print 'Test failed'
+	if testPair(22,19) == False:
+		print '22-19 Test failed'
 		return False
-	if testPair(SPI1_6,IO5) == False:
-		print 'Test failed'
+	if testPair(23,16) == False:
+		print '23-16 Test failed'
+		return False
+	if testPair(24,26) == False:
+		print '24-26 Test failed'
+		return False
+	if testPair(25,20) == False:
+		print '25-20 Test failed'
+		return False
+	if testPair(5,21) == False:
+		print '5-21 Test failed'
 		return False
 	return True
 	
 GPIO.setmode(GPIO.BCM)	# setup GPIO using Board numbering
 
-# Set all of the pins to outputs
-
-GPIO.setup(IO4, GPIO.OUT)
-GPIO.setup(IO18, GPIO.OUT)
-GPIO.setup(IO17, GPIO.OUT)
-GPIO.setup(IO27, GPIO.OUT)
-GPIO.setup(IO23, GPIO.OUT)
-GPIO.setup(IO22, GPIO.OUT)
-GPIO.setup(IO24, GPIO.OUT)
-GPIO.setup(IO25, GPIO.OUT)
-GPIO.setup(IO6, GPIO.OUT)
-GPIO.setup(IO12, GPIO.OUT)
-GPIO.setup(IO13, GPIO.OUT)
-GPIO.setup(IO19, GPIO.OUT)
-GPIO.setup(IO16, GPIO.OUT)
-GPIO.setup(IO26, GPIO.OUT)
-GPIO.setup(IO20, GPIO.OUT)
-GPIO.setup(IO21, GPIO.OUT)
-
-# Blink all of the LEDs one at a time forever
 # CTRL-C to exit which is not a particularly elegant exit strategy, but this is a demo program
 
 while 1:
@@ -151,19 +119,3 @@ while 1:
 	else:
 		print 'Daisy test failed'
 		break;
-	blinkLED(IO4)		# LED D0
-	blinkLED(IO18)
-	blinkLED(IO17)
-	blinkLED(IO27)
-	blinkLED(IO23)
-	blinkLED(IO22)
-	blinkLED(IO24)
-	blinkLED(IO25)
-	blinkLED(IO6)
-	blinkLED(IO12)
-	blinkLED(IO13)
-	blinkLED(IO19)
-	blinkLED(IO16)
-	blinkLED(IO26)
-	blinkLED(IO20)
-	blinkLED(IO21)		# LED D15
