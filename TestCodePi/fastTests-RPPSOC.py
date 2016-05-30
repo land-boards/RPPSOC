@@ -64,7 +64,6 @@ def testPair(ch2,ch1):
 	Set the output high and check the input matches.
 	Set the output low and check the output matches.
 	'''
-	# 
 	GPIO.setup(ch1, GPIO.IN)
 	GPIO.setup(ch2, GPIO.OUT)
 	GPIO.output(ch2, 1)
