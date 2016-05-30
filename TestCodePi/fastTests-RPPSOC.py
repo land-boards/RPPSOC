@@ -114,6 +114,6 @@ while 1:
 	else:
 		print 'Daisy test failed'
 		break;
-	if daisyTestCount > 1000:
-		print 'loop done'
+	if daisyTestCount > 100:
+		print 'Passed 100 loop test'
 		break;
