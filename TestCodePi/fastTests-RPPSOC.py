@@ -107,8 +107,10 @@ GPIO.setmode(GPIO.BCM)	# setup GPIO using Board numbering
 # CTRL-C to exit which is not a particularly elegant exit strategy, but this is a demo program
 
 while 1:
+	daisyTestCount = 1
 	if daisyTests() == True:
-		print 'Daisy test passed'
+		print 'Daisy test passed %d',daisyTestCount
+		daisyTestCount += 1
 	else:
 		print 'Daisy test failed'
 		break;
