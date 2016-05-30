@@ -67,13 +67,13 @@ def testPair(ch2,ch1):
 	GPIO.setup(ch1, GPIO.IN)
 	GPIO.setup(ch2, GPIO.OUT)
 	GPIO.output(ch2, 1)
-	time.sleep(0.001)
+	time.sleep(0.0001)
 	if GPIO.input(ch1) != 1:
 		print 'Error reading high on channels', ch1, ch2
 		GPIO.setup(ch2, GPIO.IN)
 		return False
 	GPIO.output(ch2, 0)
-	time.sleep(0.001)
+	time.sleep(0.0001)
 	if GPIO.input(ch1) != 0:
 		print 'Error reading low on channels', ch1, ch2
 		GPIO.setup(ch2, GPIO.IN)
