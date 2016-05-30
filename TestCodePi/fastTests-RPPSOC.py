@@ -109,10 +109,11 @@ GPIO.setmode(GPIO.BCM)	# setup GPIO using Board numbering
 daisyTestCount = 1
 while 1:
 	if daisyTests() == True:
-		print 'Daisy test passed',daisyTestCount
+#		print 'Daisy test passed',daisyTestCount
 		daisyTestCount += 1
 	else:
 		print 'Daisy test failed'
 		break;
 	if daisyTestCount > 1000:
+		print 'loop done'
 		break;
