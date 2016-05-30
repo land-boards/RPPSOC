@@ -82,22 +82,22 @@ def testPair(ch2,ch1):
 	return True
 	
 def daisyTests():
-	if testPair(17,12) == False:
+	if testPair(IO17,IO12) == False:
 		print '17-12 Test failed'
 		return False
-	if testPair(18,13) == False:
+	if testPair(IO18,IO13) == False:
 		print '18-13 Test failed'
 		return False
-	if testPair(27,19) == False:
+	if testPair(IO27,IO19) == False:
 		print '27-19 Test failed'
 		return False
-	if testPair(25,16) == False:
+	if testPair(IO25,IO16) == False:
 		print '22-16 Test failed'
 		return False
-	if testPair(5,26) == False:
+	if testPair(IO5,IO26) == False:
 		print '5-26 Test failed'
 		return False
-	if testPair(6,20) == False:
+	if testPair(IO6,IO20) == False:
 		print '6-20 Test failed'
 		return False
 	return True
@@ -109,7 +109,7 @@ GPIO.setmode(GPIO.BCM)	# setup GPIO using Board numbering
 daisyTestCount = 1
 while 1:
 	if daisyTests() == True:
-		print 'Daisy test passed ',daisyTestCount
+		print 'Daisy test passed',daisyTestCount
 		daisyTestCount += 1
 	else:
 		print 'Daisy test failed'
