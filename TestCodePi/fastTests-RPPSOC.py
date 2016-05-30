@@ -29,15 +29,13 @@ import time
 # Assign all of the GPIO lines (by board pin numbering) to their corresponding jacks 
 # on the GVS card.
 
-I2C_3 = 2
-I2C_4 = 3
-UART_3 = 14
-UART_4 = 15
-SPI0_3 = 10
-SPI0_4 = 9
-SPI0_5 = 11
-SPI0_6 = 8
-SPI1_6 = 7
+UART_TX = 14
+UART_RX = 15
+SPI__MOSI = 10
+SPI_MISO = 9
+SPI_SCLK = 11
+SPI_CE0 = 8
+SPI_CE1 = 7
 IO4 = 4
 IO5 = 5
 IO6 = 6
@@ -99,6 +97,18 @@ def daisyTests():
 		return False
 	if testPair(IO6,IO20) == False:
 		print '6-20 Test failed'
+		return False
+	if testPair(IO21,SPI_MISO) == False:
+		print 'SPI_MISO-IO21 Test failed'
+		return False
+	if testPair(SPI_SCLK,UART_TX) == False:
+		print 'SPI_SCLK-UART_TX Test failed'
+		return False
+	if testPair(SPI_CE0,UART_RX) == False:
+		print 'SPI_CE0-UART_RX Test failed'
+		return False
+	if testPair(SPI_CE1,SPI__MOSI) == False:
+		print 'SPI_CE1-SPI__MOSI Test failed'
 		return False
 	return True
 	
