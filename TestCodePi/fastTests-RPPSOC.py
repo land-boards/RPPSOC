@@ -83,29 +83,23 @@ def testPair(ch2,ch1):
 	return True
 	
 def daisyTests():
-	if testPair(17,6) == False:
-		print '17-6 Test failed'
+	if testPair(17,12) == False:
+		print '17-12 Test failed'
 		return False
-	if testPair(18,12) == False:
-		print '18-12 Test failed'
+	if testPair(18,13) == False:
+		print '18-13 Test failed'
 		return False
-	if testPair(27,13) == False:
-		print '27-13 Test failed'
+	if testPair(27,19) == False:
+		print '27-19 Test failed'
 		return False
-	if testPair(22,19) == False:
-		print '22-19 Test failed'
+	if testPair(25,16) == False:
+		print '22-16 Test failed'
 		return False
-	if testPair(23,16) == False:
-		print '23-16 Test failed'
+	if testPair(5,26) == False:
+		print '5-26 Test failed'
 		return False
-	if testPair(24,26) == False:
-		print '24-26 Test failed'
-		return False
-	if testPair(25,20) == False:
-		print '25-20 Test failed'
-		return False
-	if testPair(5,21) == False:
-		print '5-21 Test failed'
+	if testPair(6,20) == False:
+		print '6-20 Test failed'
 		return False
 	return True
 	
