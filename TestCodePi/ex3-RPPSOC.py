@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-'''led1-RPPPSOC.py
+'''ex3-RPPPSOC.py
 
-Code to blink LED on the RPPSOC card for a Raspberry Pi Model B Plus.
+Code to toggle a single line on the RPPSOC card for a Raspberry Pi Model B Plus.
 
 This code must be run as Superuser on the Raspberry Pi.
 

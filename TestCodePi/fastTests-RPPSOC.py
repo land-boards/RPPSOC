@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
-'''fastTests-RPP-UIO-16.py
+'''fastTests-RPPSOC.py
 
-Code to daisy chain test the 3.3V I/O and 
-blink the 5V lines as LEDs on the RPP-UIO-16 card for a Raspberry Pi Model B Plus.
+Code to daisy chain test the I/O lines as a daisy chain on the RPPSOC card.
 
 This code must be run as Superuser on the Raspberry Pi.
 
@@ -50,12 +49,14 @@ IO18 = 18
 IO19 = 19
 IO20 = 20
 IO21 = 21
-IO22 = 22
-IO23 = 23
-IO24 = 24
 IO25 = 25
 IO26 = 26
 IO27 = 27
+
+# Rsserved IO pins due to the programming interface
+#IO22 = 22
+#IO23 = 23
+#IO24 = 24
 
 def blinkLED(channel):
 	'''Function to blink an LED attached to an output channel

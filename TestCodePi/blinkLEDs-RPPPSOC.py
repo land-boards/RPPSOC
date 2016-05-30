@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-'''blinkLEDs-RPP-UIO-16.py
+'''blinkLEDs-RPPSOC.py
 
-Code to blink all of the LEDs on the RPP-UIO-16 card for a Raspberry Pi Model B Plus.
+Code to toggle all of the GPIO lines to the RPPSOC card.
 
 This code must be run as Superuser on the Raspberry Pi.
 
@@ -49,12 +49,20 @@ IO18 = 18
 IO19 = 19
 IO20 = 20
 IO21 = 21
-IO22 = 22
-IO23 = 23
-IO24 = 24
 IO25 = 25
 IO26 = 26
 IO27 = 27
+
+# Rsserved IO pins due to the programming interface
+#IO22 = 22
+#IO23 = 23
+#IO24 = 24
+#GPIO.setup(IO23, GPIO.OUT)
+#GPIO.setup(IO22, GPIO.OUT)
+#GPIO.setup(IO24, GPIO.OUT)
+#GPIO.output(IO23, 0)
+#GPIO.output(IO22, 0)
+#GPIO.output(IO24, 0)
 
 def blinkLED(channel):
 	'''Function to blink an LED attached to an output channel
@@ -77,9 +85,6 @@ GPIO.setup(IO4, GPIO.OUT)
 GPIO.setup(IO18, GPIO.OUT)
 GPIO.setup(IO17, GPIO.OUT)
 GPIO.setup(IO27, GPIO.OUT)
-GPIO.setup(IO23, GPIO.OUT)
-GPIO.setup(IO22, GPIO.OUT)
-GPIO.setup(IO24, GPIO.OUT)
 GPIO.setup(IO25, GPIO.OUT)
 GPIO.setup(SPI0_3, GPIO.OUT)
 GPIO.setup(SPI0_4, GPIO.OUT)
@@ -104,9 +109,6 @@ GPIO.output(IO4, 0)
 GPIO.output(IO18, 0)
 GPIO.output(IO17, 0)
 GPIO.output(IO27, 0)
-GPIO.output(IO23, 0)
-GPIO.output(IO22, 0)
-GPIO.output(IO24, 0)
 GPIO.output(IO25, 0)
 GPIO.output(SPI0_3, 0)
 GPIO.output(SPI0_4, 0)
@@ -141,9 +143,6 @@ while 1:
 	blinkLED(IO18)
 	blinkLED(IO17)
 	blinkLED(IO27)
-	blinkLED(IO23)
-	blinkLED(IO22)
-	blinkLED(IO24)
 	blinkLED(IO25)
 	blinkLED(IO5)
 	blinkLED(IO6)
