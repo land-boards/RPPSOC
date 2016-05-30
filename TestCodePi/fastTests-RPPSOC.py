@@ -80,8 +80,12 @@ def testPair(ch2,ch1):
 	return True
 	
 def daisyTests():
+# IO4
 	if testPair(IO17,IO12) == False:
 		print '17-12 Test failed'
+		return False
+	if testPair(IO17,IO4) == False:
+		print '17-4 Test failed'
 		return False
 	if testPair(IO18,IO13) == False:
 		print '18-13 Test failed'
