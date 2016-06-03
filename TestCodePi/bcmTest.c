@@ -33,11 +33,13 @@ int main(int argc, char **argv)
 	{
 		// Turn it on
 		bcm2835_gpio_write(PIN, HIGH);
+		bcm2835_gpio_write(PIN, HIGH);
 		
 		// wait a bit
 		//        bcm2835_delay(500);
 		
 		// turn it off
+		bcm2835_gpio_write(PIN, LOW);
 		bcm2835_gpio_write(PIN, LOW);
 		
 		// wait a bit
