@@ -56,7 +56,7 @@ void trigger()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdckCmosOutput()
+volatile void SetSwdckCmosOutput()
 {
     SWDCK_DRIVEMODE_CMOSOUT;
 }
@@ -79,7 +79,7 @@ void SetSwdckCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdckHizInput()
+volatile void SetSwdckHizInput()
 {
     SWDCK_DRIVEMODE_HIGHZIN;
 }
