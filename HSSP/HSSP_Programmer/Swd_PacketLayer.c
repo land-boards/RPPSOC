@@ -59,13 +59,19 @@ static void Swd_SendByte(unsigned char txByte)
         if(txByte & LSB_BIT_MASK) /* Send a '1' */
         {
             SetSwdckLow();
+            SetSwdckLow();
             SetSwdioHigh();
+            SetSwdioHigh();
+            SetSwdckHigh();
             SetSwdckHigh();
         }
         else  /* Send a '0' */
         {
             SetSwdckLow();
+            SetSwdckLow();
             SetSwdioLow();
+            SetSwdioLow();
+            SetSwdckHigh();            
             SetSwdckHigh();            
         }
         
@@ -105,13 +111,19 @@ static void Swd_SendByteFast(unsigned char txByte)
         if(txByte & LSB_BIT_MASK) /* Send a '1' */
         {
             SWDCK_OUTPUT_LOW;
+            SWDCK_OUTPUT_LOW;
             SWDIO_OUTPUT_HIGH;
+            SWDIO_OUTPUT_HIGH;
+            SWDCK_OUTPUT_HIGH;
             SWDCK_OUTPUT_HIGH;
         }
         else  /* Send a '0' */
         {
             SWDCK_OUTPUT_LOW;
+            SWDCK_OUTPUT_LOW;
             SWDIO_OUTPUT_LOW;
+            SWDIO_OUTPUT_LOW;
+            SWDCK_OUTPUT_HIGH;            
             SWDCK_OUTPUT_HIGH;            
         }
         
@@ -146,7 +158,9 @@ static unsigned char Swd_ReceiveByte()
     for(loop = 0; loop < 8; loop++)
     {
         SetSwdckLow();
+        SetSwdckLow();
         rxBit = ReadSwdio(); /* Read the SWDIO input line */
+        SetSwdckHigh();
         SetSwdckHigh();
         
         rxByte = rxByte >> 1;
@@ -188,6 +202,8 @@ static void Swd_FirstTurnAroundPhase()
     SetSwdioHizInput(); /* Change to High-Z drive mode for host to read the SWDIO line */
     
     SetSwdckLow();
+    SetSwdckLow();
+    SetSwdckHigh();
     SetSwdckHigh();
 }
 
@@ -214,6 +230,8 @@ static void Swd_SecondTurnAroundPhase()
     SetSwdioCmosOutput(); /* Change to CMOS output drive mode for host to write to SWDIO */
     
     SetSwdckLow();
+    SetSwdckLow();
+    SetSwdckHigh();
     SetSwdckHigh();
 }
 
@@ -250,7 +268,9 @@ static unsigned char Swd_GetAckSegment()
     for(loop = 0; loop < NUMBER_OF_ACK_BITS; loop++)
     {
         SetSwdckLow();
+        SetSwdckLow();
         rxBit = ReadSwdio(); /* Store the ACK bit received */
+        SetSwdckHigh();
         SetSwdckHigh();
         
         ack = ack | (rxBit << loop); /* Concatenate the ACK bit with ACK data byte */
@@ -282,6 +302,7 @@ static void Swd_SendParity(unsigned char parity)
     /* Make the clock low, Send SWDIO data, Make Clock high */
     
     SetSwdckLow();
+    SetSwdckLow();
     if(parity)
     {
         SetSwdioHigh();
@@ -290,6 +311,7 @@ static void Swd_SendParity(unsigned char parity)
     {
         SetSwdioLow();
     }
+    SetSwdckHigh();    
     SetSwdckHigh();    
 }
 
@@ -318,7 +340,9 @@ static unsigned char Swd_ReceiveParity()
     /* Make the clock low, Read SWDIO data, Make Clock high */
     
     SetSwdckLow();
+    SetSwdckLow();
     parity = ReadSwdio();
+    SetSwdckHigh();    
     SetSwdckHigh();    
     
     return(parity);
@@ -667,23 +691,33 @@ void Swd_WritePacketFast(unsigned char dataParityBit)
     /* First Turnaround phase */
     SWDIO_DRIVEMODE_HIGHZIN; /* Change to High-Z to read ACK data */  
     SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_HIGH; 
     SWDCK_OUTPUT_HIGH; 
  
     SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_LOW;
     Swd_packetAck = Swd_packetAck | (SWDIO_INPUT_READ); // Concatenate the 1st ACK bit with ACK data byte 
+    SWDCK_OUTPUT_HIGH;
     SWDCK_OUTPUT_HIGH;
     
     SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_LOW;
     Swd_packetAck = Swd_packetAck | (SWDIO_INPUT_READ << 1); // Concatenate the 2nd ACK bit with ACK data byte 
+    SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
 
     SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_LOW;
     Swd_packetAck = Swd_packetAck | (SWDIO_INPUT_READ << 2); // Concatenate the 3rd ACK bit with ACK data byte 
+    SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
     
     /* Second Turnaround phase */
     SWDIO_DRIVEMODE_CMOSOUT;
     SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_HIGH;   
     SWDCK_OUTPUT_HIGH;   
     
     /* Send 4-byte data stored in Global array Swd_packetData[].
@@ -698,26 +732,36 @@ void Swd_WritePacketFast(unsigned char dataParityBit)
     if(dataParityBit)
     {
         SWDIO_OUTPUT_HIGH;
+        SWDIO_OUTPUT_HIGH;
     }
     else
     {
         SWDIO_OUTPUT_LOW;
+        SWDIO_OUTPUT_LOW;
     }
+    SWDCK_OUTPUT_HIGH;
     SWDCK_OUTPUT_HIGH;
     
     /* Dummy clock phase since clock is not free running */
     SWDIO_OUTPUT_LOW;       
+    SWDIO_OUTPUT_LOW;       
     
     /* First Dummy clock */
     SWDCK_OUTPUT_LOW;       
+    SWDCK_OUTPUT_LOW;       
+    SWDCK_OUTPUT_HIGH; 
     SWDCK_OUTPUT_HIGH; 
     
     /* Second Dummy clock */
     SWDCK_OUTPUT_LOW;       
+    SWDCK_OUTPUT_LOW;       
+    SWDCK_OUTPUT_HIGH;
     SWDCK_OUTPUT_HIGH;
 
     /* Third Dummy clock */
     SWDCK_OUTPUT_LOW;       
+    SWDCK_OUTPUT_LOW;       
+    SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
     
     /* Swd_packetAck global variable holds the status of the SWD transaction */
@@ -751,6 +795,8 @@ static void SwdLineReset()
     for(i = 0; i < NUMBER_OF_SWD_RESET_CLOCK_CYCLES; i++)
     {
         SetSwdckLow();
+        SetSwdckLow();
+        SetSwdckHigh();        
         SetSwdckHigh();        
     }    
 }
@@ -784,6 +830,8 @@ static void SwdLineIdle()
     for(i = 0; i < NUMBER_OF_DUMMY_SWD_CLOCK_CYCLES; i++)
     {
         SetSwdckLow();        
+        SetSwdckLow();        
+        SetSwdckHigh();           
         SetSwdckHigh();           
     }    
 }
