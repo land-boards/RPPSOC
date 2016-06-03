@@ -18,7 +18,7 @@
 #include <bcm2835.h>
 #include <stdio.h>
 // Blinks on RPi Plug P1 pin 11 (which is GPIO pin 17)
-#define PIN RPI_GPIO_P1_11
+#define PIN RPI_GPIO_P1_07
 int main(int argc, char **argv)
 {
     // If you call this, it will not actually access the GPIO
