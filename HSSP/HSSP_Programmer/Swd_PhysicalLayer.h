@@ -65,8 +65,8 @@
 /********* WiringPi Functions for driving output pins on host side **************
 ********************************************************************************/
 
-#define TRIG_OUTPUT_LOW       digitalWrite(TRIG_Pin,0)
 #define TRIG_OUTPUT_HIGH      digitalWrite(TRIG_Pin,1)
+#define TRIG_OUTPUT_LOW       digitalWrite(TRIG_Pin,0)
 
 #define SWDIO_OUTPUT_HIGH      digitalWrite(SWDIO_Pin,1)
 #define SWDIO_OUTPUT_LOW       digitalWrite(SWDIO_Pin,0)
