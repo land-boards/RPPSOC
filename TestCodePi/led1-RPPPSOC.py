@@ -49,9 +49,9 @@ IO18 = 18
 IO19 = 19
 IO20 = 20
 IO21 = 21
-IO22 = 22
-IO23 = 23
-IO24 = 24
+# IO22 = 22
+# IO23 = 23
+# IO24 = 24
 IO25 = 25
 IO26 = 26
 IO27 = 27
@@ -73,17 +73,17 @@ GPIO.setmode(GPIO.BCM)	# setup GPIO using Board numbering
 GPIO.setup(IO18, GPIO.OUT)
 GPIO.setup(IO17, GPIO.OUT)
 GPIO.setup(IO27, GPIO.OUT)
-GPIO.setup(IO22, GPIO.OUT)
-GPIO.setup(IO23, GPIO.OUT)
-GPIO.setup(IO24, GPIO.OUT)
+# GPIO.setup(IO22, GPIO.OUT)
+# GPIO.setup(IO23, GPIO.OUT)
+# GPIO.setup(IO24, GPIO.OUT)
 GPIO.setup(IO25, GPIO.OUT)
 GPIO.setup(IO5, GPIO.OUT)
 GPIO.output(IO18, 0)
 GPIO.output(IO17, 0)
 GPIO.output(IO27, 0)
-GPIO.output(IO22, 0)
-GPIO.output(IO23, 0)
-GPIO.output(IO24, 0)
+# GPIO.output(IO22, 0)
+# GPIO.output(IO23, 0)
+# GPIO.output(IO24, 0)
 GPIO.output(IO25, 0)
 GPIO.output(IO5, 0)
 
@@ -94,8 +94,8 @@ while 1:
 	blinkLED(IO18)
 	blinkLED(IO17)
 	blinkLED(IO27)
-	blinkLED(IO22)
-	blinkLED(IO23)
-	blinkLED(IO24)
+	# blinkLED(IO22)
+	# blinkLED(IO23)
+	# blinkLED(IO24)
 	blinkLED(IO25)
 	blinkLED(IO5)
