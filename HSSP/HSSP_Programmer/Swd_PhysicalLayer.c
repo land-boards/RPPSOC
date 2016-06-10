@@ -196,7 +196,7 @@ void SetXresHizInput()
 *******************************************************************************/
 void SetSwdckHigh()
 {
-//    SWDCK_OUTPUT_HIGH;    
+    SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
 }
 
@@ -220,7 +220,7 @@ void SetSwdckHigh()
 *******************************************************************************/
 void SetSwdckLow()
 {
-//    SWDCK_OUTPUT_LOW;
+    SWDCK_OUTPUT_LOW;
     SWDCK_OUTPUT_LOW;
 }
 
@@ -244,7 +244,7 @@ void SetSwdckLow()
 *******************************************************************************/
 void SetSwdioHigh()
 {
-//    SWDIO_OUTPUT_HIGH;
+    SWDIO_OUTPUT_HIGH;
     SWDIO_OUTPUT_HIGH;
 }
 
@@ -268,7 +268,7 @@ void SetSwdioHigh()
 *******************************************************************************/
 void SetSwdioLow()
 {
-//    SWDIO_OUTPUT_LOW;
+    SWDIO_OUTPUT_LOW;
     SWDIO_OUTPUT_LOW;
 }
 
@@ -292,7 +292,7 @@ void SetSwdioLow()
 *******************************************************************************/
 void SetXresHigh()
 {
-//    XRES_OUTPUT_HIGH;
+    XRES_OUTPUT_HIGH;
     XRES_OUTPUT_HIGH;
 }
 
@@ -316,7 +316,7 @@ void SetXresHigh()
 *******************************************************************************/
 void SetXresLow()
 {
-//    XRES_OUTPUT_LOW;
+    XRES_OUTPUT_LOW;
     XRES_OUTPUT_LOW;
 }
 
