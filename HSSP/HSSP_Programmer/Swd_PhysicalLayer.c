@@ -196,7 +196,7 @@ volatile void SetXresHizInput()
 *******************************************************************************/
 volatile void SetSwdckHigh()
 {
-    SWDCK_OUTPUT_HIGH;    
+//    SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
 }
 
@@ -220,7 +220,7 @@ volatile void SetSwdckHigh()
 *******************************************************************************/
 volatile void SetSwdckLow()
 {
-    SWDCK_OUTPUT_LOW;
+//    SWDCK_OUTPUT_LOW;
     SWDCK_OUTPUT_LOW;
 }
 
@@ -244,7 +244,7 @@ volatile void SetSwdckLow()
 *******************************************************************************/
 volatile void SetSwdioHigh()
 {
-    SWDIO_OUTPUT_HIGH;
+//    SWDIO_OUTPUT_HIGH;
     SWDIO_OUTPUT_HIGH;
 }
 
@@ -268,7 +268,7 @@ volatile void SetSwdioHigh()
 *******************************************************************************/
 volatile void SetSwdioLow()
 {
-    SWDIO_OUTPUT_LOW;
+//    SWDIO_OUTPUT_LOW;
     SWDIO_OUTPUT_LOW;
 }
 
@@ -292,7 +292,7 @@ volatile void SetSwdioLow()
 *******************************************************************************/
 volatile void SetXresHigh()
 {
-    XRES_OUTPUT_HIGH;
+//    XRES_OUTPUT_HIGH;
     XRES_OUTPUT_HIGH;
 }
 
@@ -316,7 +316,7 @@ volatile void SetXresHigh()
 *******************************************************************************/
 volatile void SetXresLow()
 {
-    XRES_OUTPUT_LOW;
+//    XRES_OUTPUT_LOW;
     XRES_OUTPUT_LOW;
 }
 
