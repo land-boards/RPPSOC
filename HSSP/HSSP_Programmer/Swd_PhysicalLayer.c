@@ -85,7 +85,7 @@ void trigger()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdckCmosOutput()
+static inline void SetSwdckCmosOutput()
 {
     SWDCK_DRIVEMODE_CMOSOUT;
 }
@@ -108,7 +108,7 @@ inline void SetSwdckCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdckHizInput()
+static inline void SetSwdckHizInput()
 {
     SWDCK_DRIVEMODE_HIGHZIN;
 }
@@ -131,7 +131,7 @@ inline void SetSwdckHizInput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdioCmosOutput()
+static inline void SetSwdioCmosOutput()
 {
     SWDIO_DRIVEMODE_CMOSOUT;
 }
@@ -154,7 +154,7 @@ inline void SetSwdioCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdioHizInput()
+static inline void SetSwdioHizInput()
 {
     SWDIO_DRIVEMODE_HIGHZIN;        
 }
@@ -177,7 +177,7 @@ inline void SetSwdioHizInput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetXresCmosOutput()
+static inline void SetXresCmosOutput()
 {
     XRES_DRIVEMODE_CMOSOUT;
 }
@@ -200,7 +200,7 @@ inline void SetXresCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetXresHizInput()
+static inline void SetXresHizInput()
 {
     XRES_DRIVEMODE_HIGHZIN;
 }
@@ -223,7 +223,7 @@ inline void SetXresHizInput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdckHigh()
+static inline void SetSwdckHigh()
 {
     SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
@@ -247,7 +247,7 @@ inline void SetSwdckHigh()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdckLow()
+static inline void SetSwdckLow()
 {
     SWDCK_OUTPUT_LOW;
     SWDCK_OUTPUT_LOW;
@@ -271,7 +271,7 @@ inline void SetSwdckLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdioHigh()
+static inline void SetSwdioHigh()
 {
     SWDIO_OUTPUT_HIGH;
     SWDIO_OUTPUT_HIGH;
@@ -295,7 +295,7 @@ inline void SetSwdioHigh()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetSwdioLow()
+static inline void SetSwdioLow()
 {
     SWDIO_OUTPUT_LOW;
     SWDIO_OUTPUT_LOW;
@@ -319,7 +319,7 @@ inline void SetSwdioLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetXresHigh()
+static inline void SetXresHigh()
 {
     XRES_OUTPUT_HIGH;
     XRES_OUTPUT_HIGH;
@@ -343,7 +343,7 @@ inline void SetXresHigh()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline void SetXresLow()
+static inline void SetXresLow()
 {
     XRES_OUTPUT_LOW;
     XRES_OUTPUT_LOW;
@@ -369,7 +369,7 @@ inline void SetXresLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-inline unsigned char ReadSwdio()
+static inline unsigned char ReadSwdio()
 {
     return (SWDIO_INPUT_READ);
 }
