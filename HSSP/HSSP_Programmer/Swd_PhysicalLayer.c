@@ -56,7 +56,7 @@ void trigger()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdckCmosOutput()
+inline void SetSwdckCmosOutput()
 {
     SWDCK_DRIVEMODE_CMOSOUT;
 }
@@ -79,7 +79,7 @@ void SetSwdckCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdckHizInput()
+inline void SetSwdckHizInput()
 {
     SWDCK_DRIVEMODE_HIGHZIN;
 }
@@ -102,7 +102,7 @@ void SetSwdckHizInput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdioCmosOutput()
+inline void SetSwdioCmosOutput()
 {
     SWDIO_DRIVEMODE_CMOSOUT;
 }
@@ -125,7 +125,7 @@ void SetSwdioCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdioHizInput()
+inline void SetSwdioHizInput()
 {
     SWDIO_DRIVEMODE_HIGHZIN;        
 }
@@ -148,7 +148,7 @@ void SetSwdioHizInput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetXresCmosOutput()
+inline void SetXresCmosOutput()
 {
     XRES_DRIVEMODE_CMOSOUT;
 }
@@ -171,7 +171,7 @@ void SetXresCmosOutput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetXresHizInput()
+inline void SetXresHizInput()
 {
     XRES_DRIVEMODE_HIGHZIN;
 }
