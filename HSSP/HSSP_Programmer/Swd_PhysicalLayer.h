@@ -84,19 +84,19 @@
 * Function Prototypes
 ********************************************************************************/
 
-static void SetSwdckHigh(void);
-static void SetSwdckLow(void);
-static void SetSwdckCmosOutput(void);
-static void SetSwdckHizInput(void);
-static void SetSwdioHigh(void);
-static void SetSwdioLow(void);
-static void SetSwdioCmosOutput(void);
-static void SetSwdioHizInput(void);
+void SetSwdckHigh(void);
+void SetSwdckLow(void);
+void SetSwdckCmosOutput(void);
+void SetSwdckHizInput(void);
+void SetSwdioHigh(void);
+void SetSwdioLow(void);
+void SetSwdioCmosOutput(void);
+void SetSwdioHizInput(void);
 static unsigned char ReadSwdio(void);
-static void SetXresHigh(void);
-static void SetXresLow(void);
-static void SetXresCmosOutput(void);
-static void SetXresHizInput(void);
+void SetXresHigh(void);
+void SetXresLow(void);
+void SetXresCmosOutput(void);
+void SetXresHizInput(void);
 
 void setupTrig(void);
 void trigger(void);
