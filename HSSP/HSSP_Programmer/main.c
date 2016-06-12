@@ -71,9 +71,18 @@ unsigned char ProgramDevice()
 	return(FAILURE);
 
 	currentStep++;
-	if(VerifyFlash() == FAILURE)              /* Step 7 - VerifyFlash */
-	return(FAILURE);
-
+	int verifyRetryCount = 0;
+	while (verifyRetryCount < 3)
+	{
+		if(VerifyFlash() == FAILURE)             /* Step 7 - VerifyFlash */
+		{
+			verifyRetryCount++;
+			if (verifyRetryCount == 3)
+				return(FAILURE);
+		}
+		else
+			verifyRetryCount = 3;
+	}
 	currentStep++;
 	if(ProgramWriteOnceNvl() == FAILURE)      /* Step 8 - ProgramWriteOnceNvl */    
 	return(FAILURE);
