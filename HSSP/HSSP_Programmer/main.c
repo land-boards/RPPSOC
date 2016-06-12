@@ -114,7 +114,7 @@ int main()
 	printf("Land Boards, LLC - Programming PSoC\n");
 //	piHiPri(0);
 	pullUpDnControl (3, PUD_OFF);
-	setupTrig();
+//	setupTrig();
 	/* Start the HSSP Programming and store the status */
 	programResult = ProgramDevice();
 	
@@ -124,7 +124,7 @@ int main()
 	}
 	else /* HSSP Failure */
 	{ 
-		trigger();
+//		trigger();
 		ExitProgrammingMode();
 		/* Display the step number where the HSSP failed */
 		printf("HSSP Failed Step %d - ",currentStep);
