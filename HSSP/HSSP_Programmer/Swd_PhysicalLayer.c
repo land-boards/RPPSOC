@@ -194,7 +194,7 @@ void SetXresHizInput()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdckHigh()
+inline void SetSwdckHigh()
 {
     SWDCK_OUTPUT_HIGH;    
     SWDCK_OUTPUT_HIGH;    
