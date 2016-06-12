@@ -369,7 +369,7 @@ inline void SetXresLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-static inline unsigned char ReadSwdio()
+inline unsigned char ReadSwdio()
 {
     return (SWDIO_INPUT_READ);
 }

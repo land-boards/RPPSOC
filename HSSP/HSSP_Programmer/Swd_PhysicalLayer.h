@@ -92,7 +92,7 @@ void SetSwdioHigh(void);
 void SetSwdioLow(void);
 void SetSwdioCmosOutput(void);
 void SetSwdioHizInput(void);
-static unsigned char ReadSwdio(void);
+unsigned char ReadSwdio(void);
 void SetXresHigh(void);
 void SetXresLow(void);
 void SetXresCmosOutput(void);
