@@ -84,19 +84,19 @@
 * Function Prototypes
 ********************************************************************************/
 
-static inline void SetSwdckHigh(void);
-static inline void SetSwdckLow(void);
-static inline void SetSwdckCmosOutput(void);
-static inline void SetSwdckHizInput(void);
-static inline void SetSwdioHigh(void);
-static inline void SetSwdioLow(void);
-static inline void SetSwdioCmosOutput(void);
-static inline void SetSwdioHizInput(void);
-static inline unsigned char ReadSwdio(void);
-static inline void SetXresHigh(void);
-static inline void SetXresLow(void);
-static inline void SetXresCmosOutput(void);
-static inline void SetXresHizInput(void);
+static void SetSwdckHigh(void);
+static void SetSwdckLow(void);
+static void SetSwdckCmosOutput(void);
+static void SetSwdckHizInput(void);
+static void SetSwdioHigh(void);
+static void SetSwdioLow(void);
+static void SetSwdioCmosOutput(void);
+static void SetSwdioHizInput(void);
+static unsigned char ReadSwdio(void);
+static void SetXresHigh(void);
+static void SetXresLow(void);
+static void SetXresCmosOutput(void);
+static void SetXresHizInput(void);
 
 void setupTrig(void);
 void trigger(void);
