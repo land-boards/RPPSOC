@@ -39,8 +39,8 @@
 ********************************************************************************/
 void setupTrig()
 {
-	TRIG_DRIVEMODE_CMOSOUT;
-	TRIG_OUTPUT_LOW;
+	pinMode(TRIG_Pin,OUTPUT);
+	digitalWrite(TRIG_Pin,0);
 }
 
 /*******************************************************************************
@@ -60,8 +60,8 @@ void setupTrig()
 ********************************************************************************/
 void trigger()
 {	
-	TRIG_OUTPUT_HIGH;
-	TRIG_OUTPUT_LOW;
+	digitalWrite(TRIG_Pin,1);
+	digitalWrite(TRIG_Pin,0);
 }
 
 /****************** SWD Protocol Physical Layer functions ***********************
