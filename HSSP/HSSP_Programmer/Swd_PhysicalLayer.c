@@ -218,7 +218,7 @@ inline void SetSwdckHigh()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdckLow()
+inline void SetSwdckLow()
 {
     SWDCK_OUTPUT_LOW;
     SWDCK_OUTPUT_LOW;
@@ -242,7 +242,7 @@ void SetSwdckLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdioHigh()
+inline void SetSwdioHigh()
 {
     SWDIO_OUTPUT_HIGH;
     SWDIO_OUTPUT_HIGH;
@@ -266,7 +266,7 @@ void SetSwdioHigh()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetSwdioLow()
+inline void SetSwdioLow()
 {
     SWDIO_OUTPUT_LOW;
     SWDIO_OUTPUT_LOW;
@@ -290,7 +290,7 @@ void SetSwdioLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetXresHigh()
+inline void SetXresHigh()
 {
     XRES_OUTPUT_HIGH;
     XRES_OUTPUT_HIGH;
@@ -314,7 +314,7 @@ void SetXresHigh()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-void SetXresLow()
+inline void SetXresLow()
 {
     XRES_OUTPUT_LOW;
     XRES_OUTPUT_LOW;
@@ -340,7 +340,7 @@ void SetXresLow()
 *  Swd_PhysicalLayer.h.
 *
 *******************************************************************************/
-unsigned char ReadSwdio()
+inline unsigned char ReadSwdio()
 {
     return (SWDIO_INPUT_READ);
 }
