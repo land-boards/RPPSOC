@@ -1,3 +1,7 @@
+<a href="https://www.tindie.com/products/land_boards/programmable-system-on-a-chip-for-the-raspberry-pi/?pt=ac_prod_search" >
+<img src="http://land-boards.com/tindie/tindie-larges-v2.png" alt="Tindie Logo">
+</img></a> 
+
 = Land Boards System on a Chip Hat for the Raspberry Pi Card =
 
 <img src="http://land-boards.com/blwiki/images/4/42/RPPSOC-P1010074-800px.jpg"></img>
