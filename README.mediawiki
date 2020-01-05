@@ -1,5 +1,7 @@
 = Land Boards System on a Chip Hat for the Raspberry Pi Card =
 
+<img src="http://land-boards.com/blwiki/images/4/42/RPPSOC-P1010074-800px.jpg"></img>
+
 * These are the [http://land-boards.com/blwiki/index.php?title=Main_Page#RPPSOC RPPSOC Card] System on a Chip Hat for the Raspberry Pi code files.
 * Three folders are included
 ** HSSP Host Sourced Serial Programming
