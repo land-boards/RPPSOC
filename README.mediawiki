@@ -16,7 +16,7 @@
 
 == TestCodePi ==
 
-* Code that goes along with the [http://land-boards.com/blwiki/index.php?title=RPPSOC_Example_Projects RPPSOC Example Projects]
+* Code that goes along with the [https://github.com/land-boards/RPPSOC/tree/master/TestCodePi RPPSOC Example Projects]
 
 == eeprom ==
 
