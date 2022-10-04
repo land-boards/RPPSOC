@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-'''led1-RPPPSOC.py
+'''allGPIOsLED-RPPPSOC.py
 
 Code to blink LED on the RPP-UIO-16 card for a Raspberry Pi Model B Plus.
 
